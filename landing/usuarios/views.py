@@ -14,4 +14,6 @@ def anadir_usuario(request):
         if(item[0]=="email"): email = item[1]
     
     usuarios_logic.crear_usuario(nombre, email)
-    return render(request, "gracias.html")
+    return render(request, "gracias.html",{
+        "nombre":nombre
+    })
