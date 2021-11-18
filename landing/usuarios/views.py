@@ -1,6 +1,6 @@
 
 
-
+from django.shortcuts import render
 from django.http.response import HttpResponse
 from .logic import usuarios_logic
 
@@ -14,4 +14,4 @@ def anadir_usuario(request):
         if(item[0]=="email"): email = item[1]
     
     usuarios_logic.crear_usuario(nombre, email)
-    return HttpResponse("Se ha creado el usuario con nombre"+nombre+" y correo "+email)
+    return render(request, "gracias.html")
